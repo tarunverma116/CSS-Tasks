@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Layout</title>
+
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: 60px 1fr 80px;
+            height: 100vh;
+            gap: 10px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .header {
+            grid-column: 1 / -1;
+            background-color: #1d00f66e;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .sidebar {
+            grid-column: 1;
+            grid-row: 2;
+            background-color: #00ff4c53;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .main {
+            grid-column: 2;
+            grid-row: 2;
+            background-color: #e9f10698;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .card1 {
+            background-color: #f67105ad;
+            padding: 20px;
+            border-radius: 10px;
+            gap: 10px;
+        }
+
+        .card2 {
+            background-color: #f67105ad;
+            padding: 20px;
+            border-radius: 10px;
+            gap: 10px;
+        }
+
+        .footer {
+            grid-column: 1 / -1;
+            grid-row: 3;
+            background-color: #880b6f91;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Dashboard Layout</h1>
+
+    <div class="container">
+
+        <div class="header">Header</div>
+
+        <div class="sidebar">Sidebar</div>
+
+        <div class="main">
+            Main Content
+            <div class="card1">Card 1</div>
+            <div class="card2">Card 2</div>
+        </div>
+
+        <div class="footer">Footer</div>
+
+    </div>
+
+</body>
+</html>

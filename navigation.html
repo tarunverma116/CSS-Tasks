@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Navigation Bar</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        .navbar{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            background-color:rgb(5, 1, 10);
+            padding:15px 30px;
+        }
+
+        .logo{
+            color:rgb(229, 88, 27);
+            font-size:24px;
+            font-weight:bold;
+        }
+
+        .menu{
+            display:flex;
+            list-style:none;
+            gap:25px;
+        }
+
+        .menu a{
+            text-decoration:none;
+            color:rgb(249, 238, 250);
+            font-size:18px;
+        }
+
+        .menu a:hover{
+            color:rgb(0, 251, 255);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">My Website</div>
+
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="box.html">Box</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+</body>
+</html>

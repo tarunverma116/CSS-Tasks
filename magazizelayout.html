@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magazine Layout</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 200px 200px 200px;
+            gap: 10px;
+            height: 97vh;
+        }
+        h1{
+            text-align: center;
+        }
+        .featured{
+            grid-column: 1 / -1;
+            background-color: #f67105ad;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .News1{
+            grid-column: auto;
+            background-color: #00ff4c53;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .News2{
+            background-color: #e9f10698;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .News3{
+            background-color: #880b6f91;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .Advertisement{
+            background-color: #1d00f66e;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .article{
+            background-color: #5af3089a;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Magazine Layout</h1>
+
+    <div class="container">
+        <div class="featured article">Featured Article</div>
+        <div class="News1">News1</div>
+        <div class="News2">News2</div>
+        <div class="News3">News3</div>
+        <div class="Advertisement">Advertisement</div>
+        <div class="article">Article</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#F3F4F6;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#041334;
+    color:white;
+    padding:15px 30px;
+}
+
+.navbar ul{
+    display:flex;
+    list-style:none;
+    gap:20px;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+}
+
+.navbar a:hover{
+    text-decoration:underline;
+}
+
+.main{
+    display:flex;
+    min-height:90vh;
+}
+
+.sidebar{
+    width:220px;
+    background:#1F2937;
+    color:white;
+    padding:20px;
+}
+
+.sidebar h2{
+    margin-bottom:20px;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar li{
+    background:#374151;
+    padding:12px;
+    margin:10px 0;
+    border-radius:6px;
+}
+
+.sidebar li:hover{
+    background:#041740;
+    cursor:pointer;
+}
+
+.content{
+    flex:1;
+    padding:25px;
+}
+
+.content h2{
+    margin-bottom:20px;
+    color:#1F2937;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.card{
+    flex:1;
+    min-width:200px;
+    background:white;
+    border-left:5px solid #06183f;
+    padding:20px;
+    border-radius:8px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card h1{
+    color:#051841;
+}
+
+.card p{
+    margin-top:10px;
+    color:#555;
+}
+
+/* Bottom Section */
+.bottom{
+    display:flex;
+    gap:20px;
+    margin-top:30px;
+}
+
+.box{
+    flex:1;
+    background:white;
+    padding:20px;
+    border-radius:8px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.box h3{
+    color:#01133c;
+    margin-bottom:15px;
+}
+
+.box ul{
+    margin-left:20px;
+}
+
+.box li{
+    margin:10px 0;
+}
+
+/* Footer */
+.footer{
+    background:#1F2937;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+</style>
+
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <h2>Admin Dashboard</h2>
+
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Reports</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Logout</a></li>
+    </ul>
+</div>
+
+<!-- Main -->
+<div class="main">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Menu</h2>
+
+        <ul>
+            <li>Dashboard</li>
+            <li>Users</li>
+            <li>Products</li>
+            <li>Orders</li>
+            <li>Sales</li>
+            <li>Settings</li>
+        </ul>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+
+        <h2>Welcome Back!</h2>
+
+        <!-- Cards -->
+        <div class="cards">
+
+            <div class="card">
+                <h1>1,250</h1>
+                <p>Total Users</p>
+            </div>
+
+            <div class="card">
+                <h1>845</h1>
+                <p>Total Orders</p>
+            </div>
+
+            <div class="card">
+                <h1>₹4.8L</h1>
+                <p>Revenue</p>
+            </div>
+
+            <div class="card">
+                <h1>96%</h1>
+                <p>Performance</p>
+            </div>
+
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="bottom">
+
+            <div class="box">
+                <h3>Recent Activities</h3>
+                <ul>
+                    <li>New user registered</li>
+                    <li>Order #1045 completed</li>
+                    <li>Revenue updated</li>
+                    <li>Profile modified</li>
+                    <li>System backup completed</li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h3>Quick Actions</h3>
+                <ul>
+                    <li>Add User</li>
+                    <li>Add Product</li>
+                    <li>View Reports</li>
+                    <li>Manage Orders</li>
+                    <li>System Settings</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

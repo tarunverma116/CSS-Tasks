@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Card</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f2f2f2;
+        }
+
+        .card {
+            width: 400px;
+            padding: 40px;
+            background-color: rgb(234, 249, 247);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h1 {
+            margin-bottom: 25px;
+        }
+
+        form {
+            width: 100%;
+        }
+
+        label {
+            display: inline-block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #20a090;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        label::selection{
+            background-color: rgb(6, 17, 15);
+            color: rgb(225, 19, 12);
+        }
+
+        button:hover {
+            background-color: #168578;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h1>Login</h1>
+
+            <form action="">
+
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Username">
+
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Password">
+
+                <button type="submit">Login</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

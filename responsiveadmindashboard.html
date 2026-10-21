@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Admin Dashboard</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 180px repeat(2, 1fr);
+            grid-template-rows: 70px 100px 100px 100px 100px 60px;
+            gap: 10px;
+            min-height: 100vh;
+            padding: 10px;
+        }
+
+        .header {
+            grid-column: 1 / -1;
+            background-color: #1d00f66e;
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .sidebar {
+            grid-column: 1;
+            grid-row: 2 / 5;
+            background-color: #00ff4c53;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .stat {
+            background-color: #f2f605ad;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .recent {
+            grid-column: 2;
+            background-color: #f67105ad;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .Activity {
+            grid-column: 3;
+            background-color: #5af3089a;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .footer {
+            grid-column: 1 / -1;
+            background-color: #c0c0c0;
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+
+        @media (max-width: 768px) {
+
+            .container {
+                grid-template-columns: 150px 1fr;
+                grid-template-rows: 70px repeat(6, 90px) 120px 120px 60px;
+            }
+
+            .header {
+                grid-column: 1 / -1;
+            }
+
+            .sidebar {
+                grid-column: 1;
+                grid-row: 2 / 8;
+            }
+
+            .stat {
+                grid-column: 2;
+            }
+
+            .recent {
+                grid-column: 1 / -1;
+                grid-row: 8;
+            }
+
+            .Activity {
+                grid-column: 1 / -1;
+                grid-row: 9;
+            }
+
+            .footer {
+                grid-column: 1 / -1;
+                grid-row: 10;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+                grid-template-rows: 60px 80px repeat(6, 90px) 120px 120px 50px;
+            }
+
+            .header {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            .sidebar {
+                grid-column: 1;
+                grid-row: 2;
+            }
+
+            .stat {
+                grid-column: 1;
+            }
+
+            .recent {
+                grid-column: 1;
+                grid-row: 9;
+            }
+
+            .Activity {
+                grid-column: 1;
+                grid-row: 10;
+            }
+
+            .footer {
+                grid-column: 1;
+                grid-row: 11;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Responsive Admin Dashboard</h1>
+
+    <div class="container">
+
+        <div class="header">Header</div>
+
+        <div class="sidebar">Sidebar</div>
+
+        <div class="stat">STAT</div>
+        <div class="stat">STAT</div>
+        <div class="stat">STAT</div>
+        <div class="stat">STAT</div>
+        <div class="stat">STAT</div>
+        <div class="stat">STAT</div>
+
+        <div class="recent">Recent Orders</div>
+
+        <div class="Activity">Activity</div>
+
+        <div class="footer">Footer</div>
+
+    </div>
+
+</body>
+
+</html>

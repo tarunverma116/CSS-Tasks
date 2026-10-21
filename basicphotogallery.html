@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Photo gallery</title>
+    <style>
+        .container{
+            text-align: center;
+            justify-content: center;
+            height: 97vh;
+            display:grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            grid-template-rows: repeat(3, 1fr);
+            gap: 3%;
+        }
+        .container>div{
+            outline:1px solid black;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Basic Photo gallery
+    </h1>
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
+    
+</body>
+</html>

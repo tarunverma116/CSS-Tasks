@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page</title>
+    <style>
+        .Container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 1%;
+            grid-template-areas:
+                "box1 box1 box2"
+                "box1 box1 box2"
+                "box3 box4 box5"
+                "box6 box6 box7"
+                "box6 box6 box8"
+                "box9 box9 box9";
+        }
+
+        @media (max-width: 500px) {
+            .Container {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 1%;
+                grid-template-areas:
+                    "box1 box1"
+                    "box3 box3 box2"
+                    "box6 box5 box4"
+                    "box6 box8"
+                    "box6 box6 box8"
+                    "box9 box9 box9";
+            }
+
+        }
+
+        .box {
+            background-color: #000000;
+            min-width: 100px;
+            min-height: 100px;
+            color: aliceblue;
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Container">
+        <div class="box" style="grid-area: box1;">1</div>
+        <div class="box" style="grid-area: box2;">2</div>
+        <div class="box" style="grid-area: box3;">3</div>
+        <div class="box" style="grid-area: box4;">4</div>
+        <div class="box" style="grid-area: box5;">5</div>
+        <div class="box" style="grid-area: box6;">6</div>
+        <div class="box" style="grid-area: box7;">7</div>
+        <div class="box" style="grid-area: box8;">8</div>
+        <div class="box" style="grid-area: box9;">9</div>
+    </div>
+</body>
+
+</html>

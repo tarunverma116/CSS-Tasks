@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Indian Flag</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(254, 254, 254);
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Flag */
+
+        .flag {
+            width: 500px;
+            height: 300px;
+
+            background-image: linear-gradient(
+                to bottom,
+                #FF9933,
+                rgb(255, 255, 255),
+                #138808
+            );
+
+            border: 2px solid black;
+            outline: 5px double black;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 10px;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+        }
+
+        /* Stick */
+
+        .stick {
+            width: 20px;
+            height: 700px;
+
+            background-image: linear-gradient(
+                to left,
+                #000000,
+                rgb(255, 255, 255),
+                #000000
+            );
+
+            position: absolute;
+
+            left: -20px;
+            top: 0;
+
+            z-index: -1;
+        }
+
+        /* Base */
+
+        .box1 {
+            width: 200px;
+            height: 50px;
+
+            background-color: #020202;
+
+            border-radius: 0px 10px 0px 0px;
+
+            margin-top: 400px;
+        }
+
+        .box2 {
+            width: 300px;
+            height: 50px;
+
+            background-color: #020202;
+
+            border-radius: 0px 10px 0px 0px;
+        }
+
+        .box3 {
+            width: 400px;
+            height: 50px;
+
+            background-color: #020202;
+
+            border-radius: 0px 10px 0px 0px;
+        }
+
+        /* Button */
+
+        button {
+            margin-top: 30px;
+
+            padding: 12px 25px;
+
+            font-size: 18px;
+            font-weight: bold;
+
+            border: none;
+            border-radius: 25px;
+
+            background-image: linear-gradient(
+                to right,
+                #FF9933,
+                #138808
+            );
+
+            color: white;
+
+            cursor: pointer;
+
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Flowers */
+
+        .flower {
+            position: fixed;
+            top: -50px;
+
+            pointer-events: none;
+
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+
+            0% {
+                transform: translateY(-50px) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="flag">
+
+            <img src="flag-logo-removebg-preview.png" alt="logo">
+
+        </div>
+
+        <div class="stick"></div>
+
+        <div class="box1"></div>
+
+        <div class="box2"></div>
+
+        <div class="box3"></div>
+
+        <button onclick="flowerShower()">
+            🌸 Flower Shower 🌸
+        </button>
+
+    </div>
+
+
+    <script>
+
+        function flowerShower() {
+
+            for (let i = 0; i < 80; i++) {
+
+                let flower = document.createElement("div");
+
+                flower.className = "flower";
+
+                let flowers = [
+                    "🌸",
+                    "🌺",
+                    "🌼",
+                    "🌻",
+                    "💮"
+                ];
+
+                flower.innerHTML =
+                    flowers[Math.floor(Math.random() * flowers.length)];
+
+                flower.style.left =
+                    Math.random() * 100 + "vw";
+
+                flower.style.fontSize =
+                    (15 + Math.random() * 25) + "px";
+
+                flower.style.animationDuration =
+                    (2 + Math.random() * 4) + "s";
+
+                flower.style.animationDelay =
+                    Math.random() * 2 + "s";
+
+                document.body.appendChild(flower);
+
+                setTimeout(function () {
+                    flower.remove();
+                }, 7000);
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

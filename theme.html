@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Toggle</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: rgb(236, 115, 9);
+            transition: 0.3s;
+        }
+
+        .card {
+            width: 300px;
+            margin: 100px auto;
+            padding: 30px;
+            text-align: center;
+            border-radius: 15px;
+            background-color: #f2f2f2;
+        }
+
+        .theme-bin-lable {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: rgb(53, 186, 9);
+            color: white;
+            border-radius: 8px;
+        }
+        #theme-toggle:checked ~ .card {
+            background-color: #222;
+            color: white;
+        }
+
+        #theme-toggle:checked ~ .card .theme-bin-lable {
+            background-color: rgb(234, 244, 237);
+            color: rgb(233, 9, 133);
+        }
+        #theme-toggle {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="checkbox" id="theme-toggle">
+
+    <div class="card">
+        <h1>Hello World</h1>
+
+        <label for="theme-toggle" class="theme-bin-lable">
+            Switch Theme
+        </label>
+    </div>
+
+</body>
+</html>

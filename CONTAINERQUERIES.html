@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            container-type: inline-size;
+            container-name: parent;
+            margin: auto;
+            box-shadow: 3px 3px 5px grey;
+            padding: 1%;
+        }
+        @container parent (max-width: 800px){
+            .child{
+                background-color: red;
+                color: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">
+            <p class="card_text">Lorem Ipsum</p>
+        </div>
+    </div>
+</body>
+</html>
