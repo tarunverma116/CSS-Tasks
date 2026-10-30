@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #f0f4f8;
+            padding: 50px 15px;
+        }
+
+        .game {
+            max-width: 400px;
+            margin: auto;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px #ccc;
+        }
+
+        h1 {
+            color: #2563eb;
+        }
+
+        input, button {
+            padding: 12px;
+            margin: 8px;
+            font-size: 16px;
+            border-radius: 6px;
+        }
+
+        input {
+            width: 70%;
+            border: 1px solid #aaa;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        #message {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        #score {
+            color: #15803d;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="game">
+        <h1>Guess the Number</h1>
+
+        <p>Guess a number between 1 and 1,000,000.</p>
+        <p>You have <b>7 attempts</b>!</p>
+
+        <input type="number" id="guess"
+               placeholder="Enter your guess"
+               min="1" max="1000000">
+
+        <br>
+
+        <button id="submitBtn" onclick="checkGuess()">
+            Submit Guess
+        </button>
+
+        <p id="attempts">Attempts left: 7</p>
+        <p id="message">Good luck!</p>
+        <p id="score"></p>
+
+        <button onclick="restartGame()">Play Again</button>
+    </div>
+
+    <script>
+        let secretNumber = Math.floor(Math.random() * 1000000) + 1;
+        let attempts = 7;
+        let score = 0;
+        let gameOver = false;
+
+        function checkGuess() {
+            if (gameOver) return;
+
+            let input = document.getElementById("guess");
+            let guess = Number(input.value);
+            let message = document.getElementById("message");
+
+            if (input.value === "" || !Number.isInteger(guess) ||
+                guess < 1 || guess > 1000000) {
+                message.textContent =
+                    "Enter a whole number between 1 and 1,000,000!";
+                return;
+            }
+
+            attempts--;
+
+            if (guess === secretNumber) {
+                score = attempts * 10 + 10;
+                message.textContent = "🎉 Correct! You guessed it!";
+                endGame();
+            } else if (attempts === 0) {
+                score = 0;
+                message.textContent =
+                    "Game Over! The number was " + secretNumber;
+                endGame();
+            } else if (guess < secretNumber) {
+                message.textContent = "📈 Too low! Try a higher number.";
+            } else {
+                message.textContent = "📉 Too high! Try a lower number.";
+            }
+
+            document.getElementById("attempts").textContent =
+                "Attempts left: " + attempts;
+
+            input.value = "";
+            input.focus();
+        }
+
+        function endGame() {
+            gameOver = true;
+            document.getElementById("score").textContent =
+                "Final Score: " + score + " / 70";
+            document.getElementById("submitBtn").disabled = true;
+        }
+
+        function restartGame() {
+            secretNumber = Math.floor(Math.random() * 1000000) + 1;
+            attempts = 7;
+            score = 0;
+            gameOver = false;
+
+            document.getElementById("guess").value = "";
+            document.getElementById("attempts").textContent =
+                "Attempts left: 7";
+            document.getElementById("message").textContent = "Good luck!";
+            document.getElementById("score").textContent = "";
+            document.getElementById("submitBtn").disabled = false;
+        }
+    </script>
+
+</body>
+</html>
