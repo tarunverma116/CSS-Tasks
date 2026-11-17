@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15 Minute Countdown Timer</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #222;
+            color: white;
+            padding-top: 100px;
+        }
+
+        h1 {
+            color: orange;
+        }
+
+        #timer {
+            font-size: 60px;
+            margin: 30px;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            margin: 5px;
+        }
+
+        #start {
+            background: green;
+            color: white;
+        }
+
+        #reset {
+            background: red;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>15 Minute Countdown Timer</h1>
+
+    <div id="timer">15:00</div>
+
+    <button id="start" onclick="startTimer()">Start</button>
+    <button id="reset" onclick="resetTimer()">Reset</button>
+
+    <h2 id="message"></h2>
+
+    <script>
+        let timeLeft = 15 * 60;
+        let interval;
+
+        function updateTimer() {
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+
+            document.getElementById("timer").textContent =
+                String(minutes).padStart(2, "0") + ":" +
+                String(seconds).padStart(2, "0");
+
+            if (timeLeft > 0) {
+                timeLeft--;
+            }
+        }
+
+        function startTimer() {
+            if (interval) return;
+
+            document.getElementById("message").textContent = "";
+
+            interval = setInterval(updateTimer, 1000);
+
+            setTimeout(() => {
+                clearInterval(interval);
+                interval = null;
+                timeLeft = 0;
+                updateTimer();
+
+                document.getElementById("message").textContent =
+                    "⏰ Time's Up!";
+            }, timeLeft * 1000);
+        }
+
+        function resetTimer() {
+            clearInterval(interval);
+            interval = null;
+            timeLeft = 15 * 60;
+
+            document.getElementById("timer").textContent = "15:00";
+            document.getElementById("message").textContent = "";
+        }
+    </script>
+
+</body>
+</html>
